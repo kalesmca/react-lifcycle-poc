@@ -20,10 +20,11 @@ export default class ParentContainer extends React.Component {
     componentDidUpdate(){
         console.log('parent :component did update triggered')
     }
-    shouldComponentUpdate(newProps){
+    shouldComponentUpdate(newProps, newState){
 
-        console.log('parent :component should update triggered it condition basic call render method')
-        if(newProps != this.props){
+        console.log('parent :component should update triggered it condition basic call render method', this.state, newState)
+        debugger
+        if(newState != this.state){
             return true;
         } else {
             return false;
@@ -41,7 +42,7 @@ export default class ParentContainer extends React.Component {
             <div>ParentContainer
                 <div>Parent</div>
                 <div>Name : <input  value={this.state.name} onChange={(e)=>{this.setState({name:e.target.value})}}/></div>
-                <Child1Container />
+                <Child1Container name={this.state.name}/>
                 <Child2Container />
             </div>
         )

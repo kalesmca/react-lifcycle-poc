@@ -14,13 +14,14 @@ export default class Child1Container extends React.Component {
     componentDidMount(){
         console.log('Child 1: :component did mount triggered')
     }
-    componentDidUpdate(){
-        console.log('Child 1: :component did update triggered')
-    }
-    shouldComponentUpdate(){
-        console.log('Child 1: :component should update triggered it condition basic call render method')
+    componentDidUpdate(previousProps){
 
+        console.log('Child 1: :component did update triggered:', previousProps, this.props)
     }
+    // shouldComponentUpdate(){
+    //     console.log('Child 1: :component should update triggered it condition basic call render method')
+
+    // }
 
     componentWillUnmount(){
         console.log('Child 1: component unmount');

@@ -3,6 +3,7 @@ import React from "react";
 export default class Child2Container extends React.Component {
     constructor(props){
         super(props)
+        console.log('child1 constructor')
     }
     componentWillMount(){
         console.log('Child 2: :component will mount triggered')
@@ -17,10 +18,10 @@ export default class Child2Container extends React.Component {
     componentDidUpdate(){
         console.log('Child 2: :component did update triggered')
     }
-    shouldComponentUpdate(){
-        console.log('Child 2: :component should update triggered it condition basic call render method')
+    // shouldComponentUpdate(){
+    //     console.log('Child 2: :component should update triggered it condition basic call render method')
 
-    }
+    // }
 
     componentWillUnmount(){
         console.log('Child 2: component unmount');
