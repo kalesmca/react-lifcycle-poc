@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import "../../index.css";
 import HeaderComponent from './components/header';
 import SideBarComponent from './components/sidenav';
@@ -10,6 +10,7 @@ const CreateInvestmentComponent = React.lazy(() => import("../create/investment"
 const CreateTypeComponent = React.lazy(() => import("../create/investment-type"));
 const InvestmentTypeListComponent = React.lazy(() => import("../list/investment-types"));
 const InvestmentList = React.lazy(() => import("../list/investmentList"));
+const ProfileContainer = React.lazy(()=> import("../profile/profileContainer"));
 
 
 
@@ -43,6 +44,9 @@ const LayoutContainer = (props) => {
           <Route path="types-list" element={<React.Suspense fallback={<>...</>}>
                 <InvestmentTypeListComponent />
               </React.Suspense>} />
+              <Route path="profile" element={<React.Suspense fallback={<>...</>}>
+                <ProfileContainer />
+              </React.Suspense>} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
@@ -50,15 +54,15 @@ const LayoutContainer = (props) => {
           <Route path="*" element={<React.Suspense fallback={<>...</>}>
                 <ParentContainer />
               </React.Suspense>} />
+
+              
       
       </Routes>
 
 
 
         <div className="container">
-          Main Containersss
-
-         
+                   
             <Outlet />
 
         </div>

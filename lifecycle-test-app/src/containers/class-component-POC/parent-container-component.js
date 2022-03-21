@@ -39,7 +39,7 @@ export default class ParentContainer extends React.Component {
     render(){
         console.log('parent render method trigging');
         return(
-            <div>ParentContainer
+            <div className="container">ParentContainer
                 <div>Parent</div>
                 <div>Name : <input  value={this.state.name} onChange={(e)=>{this.setState({name:e.target.value})}}/></div>
                 <Child1Container name={this.state.name}/>

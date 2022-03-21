@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../../index.css";
+import {Link } from "react-router-dom";
 
 
 const HeaderComponent = (props) =>{
@@ -13,7 +14,9 @@ const HeaderComponent = (props) =>{
 
                     </div>
                     <div className="header-right">
+                    <Link to="/profile"><i className="fa fa-user" style={{color:"white", marginRight:"20px"}}></i></Link>
                         <a className="logout-btn">logout</a>
+                        
                     </div>
 
                 </header>
