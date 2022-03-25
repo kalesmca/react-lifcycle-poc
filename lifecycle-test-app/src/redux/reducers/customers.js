@@ -12,9 +12,10 @@ const initState = {
 }
 
 const customerReducer = (state=initState, action) =>{
+    console.log('action ss:', action);
     switch(action.type) {
         case GET_CUSTOMERS :{
-            return {...state}
+            return {...state, customerList: [...state.customerList, ...[action.payload]]}
         }
         case ADD_CUSTOMER :{
             return {...state, customerList: [...state.customerList, ...[action.payload]] }

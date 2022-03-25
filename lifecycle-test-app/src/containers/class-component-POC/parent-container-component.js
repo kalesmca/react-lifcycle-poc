@@ -23,7 +23,6 @@ export default class ParentContainer extends React.Component {
     shouldComponentUpdate(newProps, newState){
 
         console.log('parent :component should update triggered it condition basic call render method', this.state, newState)
-        debugger
         if(newState != this.state){
             return true;
         } else {

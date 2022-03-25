@@ -1,15 +1,14 @@
 import {GET_CUSTOMERS, ADD_CUSTOMER, UPDATE_CUSTOMER} from '../../constants/actions';
-export const getCustomers = () => {
-    
-    return {type: GET_CUSTOMERS}
-}
 
-export const addCustomer = (data) =>{
-    return {type: ADD_CUSTOMER, payload: data}
-}
+import {get} from '../services/apiService';
 
-export const updateCustomer = (data) =>{
+
+export const  getCustomerList = () => async(dispatch) => {
+    await  get('http://localhost:3000/customers').then((res)=>{
+        console.log('get Customer Response :', res);
+        dispatch ({type: GET_CUSTOMERS, payload: res.data})
+    })
     
-    return {type: UPDATE_CUSTOMER, payload: data}
+
 }
 

@@ -1,5 +1,7 @@
 import {applyMiddleware, createStore} from 'redux';
 import rootReducer from './reducers';
+import ReduxThunk from 'redux-thunk';
+
 
 // Import the necessary methods for saving and loading
 import { save, load } from "redux-localstorage-simple"
@@ -10,7 +12,7 @@ import { save, load } from "redux-localstorage-simple"
     each time an action is handled by your reducer.
 */    
 const createStoreWithMiddleware 
-    = applyMiddleware(
+    = applyMiddleware(ReduxThunk,
         save() // Saving done here
     )(createStore)
     

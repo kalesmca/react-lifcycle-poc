@@ -1,12 +1,22 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import "../../../index.css";
 import {Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import {getCustomerList} from '../../../redux/actions/customers'
+
 
 
 const HeaderComponent = (props) =>{
     const appState = useSelector((state)=> state)
-    console.log('appState : ', appState);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getCustomerList())
+    },[])
+
+    useEffect(()=>{
+        console.log('appState :', appState);
+    })
+
     return (
         <header className="header-container">
                     <label htmlFor="check" id="">
@@ -14,6 +24,13 @@ const HeaderComponent = (props) =>{
                     </label>
                     <div className="header-left">
                         <span><h3>RMWB-Cockpit</h3></span>
+                        {
+                           appState.customers?.customerList?.map((customer, cusIndex)=>{
+                               return(
+                                   <span key={cusIndex}>{customer.name}</span>
+                               )
+                           }) 
+                        }
 
                     </div>
                     <div className="header-right">
