@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { TextField, Box, Button } from "@mui/material";
 import "./profile.scss";
 import Accordion from "@mui/material/Accordion";
@@ -15,6 +16,8 @@ import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 
 import Modal from "@mui/material/Modal";
 
+import {getProfile, updateProfile} from '../../redux/actions/profile';
+
 const modalStyle = {
   position: "absolute",
   top: "50%",
@@ -28,15 +31,27 @@ const modalStyle = {
 };
 
 export default function ProfileContainer() {
+  const dispatch = useDispatch();
+  const profileState = useSelector((state)=> state.profile);
+  const [profile, setProfile] = useState(profileState);
+  const [isProfileEdit, setEditFlag] = useState(false);
   const [carrierList, setCarrier] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
 
+  useEffect(()=>{
+    dispatch(getProfile());
+  },[])
   const handleChange = (newValue) => {
     setValue(newValue);
   };
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const updateProfileData = () =>{
+    setEditFlag(false);
+    dispatch(updateProfile(profile))
+  }
 
   return (
     <div className="container">
@@ -47,10 +62,10 @@ export default function ProfileContainer() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Basic Details</Typography>
+            <div>Basic Details</div>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <div>
               <Box
                 component="form"
                 sx={{
@@ -62,31 +77,55 @@ export default function ProfileContainer() {
                 <TextField
                   id="standard-basic"
                   label="Name"
-                  variant="standard"
+                  variant="outlined"
+                  value={profile.name}
+                  onChange={(e)=>{setProfile({...profile ,...{name:e.target.value}})}}
+                  disabled = {!isProfileEdit}
                 />
-                <input
-                  className="dob-date"
-                  type="date"
-                  id="birthday"
-                  name="birthday"
-                />
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DesktopDatePicker
+                      label="Date of Birth"
+                      inputFormat="MM/dd/yyyy"
+                      value={profile.dob}
+                      onChange={(value)=> {setProfile({...profile, ...{dob:value}})}}
+                      renderInput={(params) => <TextField {...params} />}
+                      disabled = {!isProfileEdit}
+                    />
+                </LocalizationProvider>
                 <TextField
                   id="standard-basic"
                   label="Email-ID"
-                  variant="standard"
+                  variant="outlined"
+                  value={profile.email}
+                  onChange={(e)=>{setProfile({...profile ,...{email:e.target.value}})}}
+                  disabled = {!isProfileEdit}
                 />
                 <TextField
                   id="standard-basic"
                   label="Blood Group"
-                  variant="standard"
+                  variant="outlined"
+                  value={profile.blood}
+                  onChange={(e)=>{setProfile({...profile ,...{blood:e.target.value}})}}
+                  disabled = {!isProfileEdit}
                 />
                 <TextField
                   id="standard-basic"
                   label="Mobile Number"
-                  variant="standard"
+                  variant="outlined"
+                  value={profile.mobile}
+                  onChange={(e)=>{setProfile({...profile ,...{mobile:e.target.value}})}}
+                  disabled = {!isProfileEdit}
                 />
+                <div style={{float:"right", marginRight:"10rem", marginTop:"1rem"}}>
+                {
+                  !isProfileEdit ? (<Button variant="contained" onClick={()=>{setEditFlag(true)}}>Edit</Button>):(<Button variant="contained" onClick={()=>{updateProfileData()}}>Save</Button>)
+                }
+
+</div>
+                
+
               </Box>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -95,11 +134,12 @@ export default function ProfileContainer() {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography>Carrier</Typography>
+            <div>Carrier</div>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <div>
               <table id="customers">
+                <thead>
                 <tr>
                   <th>Sno</th>
                   <th>Company Name</th>
@@ -111,6 +151,8 @@ export default function ProfileContainer() {
                     Action <AddCircleIcon onClick={handleOpen} />
                   </th>
                 </tr>
+                </thead>
+                <tbody>
                 {!carrierList.length ? (
                   <tr>
                     <td colSpan={6}>
@@ -120,8 +162,9 @@ export default function ProfileContainer() {
                 ) : (
                   ""
                 )}
+                </tbody>
               </table>
-            </Typography>
+            </div>
           </AccordionDetails>
         </Accordion>
         <Accordion disabled>
@@ -130,7 +173,7 @@ export default function ProfileContainer() {
             aria-controls="panel3a-content"
             id="panel3a-header"
           >
-            <Typography>Disabled Accordion</Typography>
+            <div>Disabled Accordion</div>
           </AccordionSummary>
         </Accordion>
       </div>
@@ -143,10 +186,10 @@ export default function ProfileContainer() {
           aria-describedby="modal-modal-description"
         >
           <Box sx={modalStyle}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <div id="modal-modal-title" variant="h6" component="h2">
               Create Carrier
-            </Typography>
-            <Typography>
+            </div>
+            <div>
               <Box
                 component="form"
                 sx={{
@@ -158,13 +201,13 @@ export default function ProfileContainer() {
                 <TextField
                   id="standard-basic"
                   label="Company Name"
-                  variant="standard"
+                  variant="outlined"
                 />
 
                 <TextField
                   id="standard-basic"
                   label="Emp-ID"
-                  variant="standard"
+                  variant="outlined"
                 />
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DesktopDatePicker
@@ -187,7 +230,7 @@ export default function ProfileContainer() {
                 <Button variant="contained">Save</Button>
 
               </Box>
-            </Typography>
+            </div>
           </Box>
         </Modal>
       </div>

@@ -10,12 +10,8 @@ const HeaderComponent = (props) =>{
     const appState = useSelector((state)=> state)
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(getCustomerList())
+        // dispatch(getCustomerList())
     },[])
-
-    useEffect(()=>{
-        console.log('appState :', appState);
-    })
 
     return (
         <header className="header-container">
@@ -24,13 +20,13 @@ const HeaderComponent = (props) =>{
                     </label>
                     <div className="header-left">
                         <span><h3>RMWB-Cockpit</h3></span>
-                        {
+                        {/* {
                            appState.customers?.customerList?.map((customer, cusIndex)=>{
                                return(
                                    <span key={cusIndex}>{customer.name}</span>
                                )
                            }) 
-                        }
+                        } */}
 
                     </div>
                     <div className="header-right">

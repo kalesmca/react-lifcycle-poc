@@ -1,20 +1,28 @@
 {
-    "customers":[
-        {
-            "id":"d1",
-            "value": "Aarumugasamy",
-            "name": "ஆறுமுகச்சாமி பலசரக்கு கடை",
-            "mobile": 9876543210,
-            "gst": 654321321,
-            "address":"தளவாய்புரம்"
-        },
-        {
-            "id":"d2",
-            "value": "Sivasupramaniam",
-            "name": "சிவசுப்பிரமணி பலசரக்கு கடை",
-            "mobile": 9876543210,
-            "gst": 654321321,
-            "address":"தளவாய்புரம்"
-        }
-    ]
+  "customers": [
+    {
+      "value": "Aarumugasamy",
+      "name": "ASP",
+      "mobile": 9876543210,
+      "gst": 654321321,
+      "address": "தளவாய்புரம்",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "value": "Sivasupramaniam",
+      "name": "சிவசுப்பிரமணி பலசரக்கு கடை",
+      "mobile": 9876543210,
+      "gst": 654321321,
+      "address": "தளவாய்புரம்"
+    }
+  ],
+  "profile": {
+    "name": "Kaleeswaran Mariappan",
+    "email": "kalesmca@gmail.com",
+    "id": 1,
+    "blood": "A+ve",
+    "dob": "2022-03-03T17:16:54.000Z",
+    "mobile": "8682890117"
+  }
 }
