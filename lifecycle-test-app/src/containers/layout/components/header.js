@@ -1,9 +1,12 @@
 import React from 'react';
 import "../../../index.css";
 import {Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const HeaderComponent = (props) =>{
+    const appState = useSelector((state)=> state)
+    console.log('appState : ', appState);
     return (
         <header className="header-container">
                     <label htmlFor="check" id="">
