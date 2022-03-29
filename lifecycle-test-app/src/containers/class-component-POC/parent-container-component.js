@@ -7,9 +7,9 @@ export default class ParentContainer extends React.Component {
         super(props)
         this.state = {name: 'kalees'}
     }
-    componentWillMount(){
-        console.log('parent :component will mount triggered')
-    }
+    // componentWillMount(){
+    //     console.log('parent :component will mount triggered')
+    // }
     componentDidCatch(){
         console.log('parent :component did catch triggered')
 

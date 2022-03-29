@@ -4,9 +4,9 @@ export default class Child1Container extends React.Component {
     constructor(props){
         super(props)
     }
-    componentWillMount(){
-        console.log('Child 1: :component will mount triggered')
-    }
+    // componentWillMount(){
+    //     console.log('Child 1: :component will mount triggered')
+    // }
     componentDidCatch(){
         console.log('Child 1: :component did catch triggered')
 
