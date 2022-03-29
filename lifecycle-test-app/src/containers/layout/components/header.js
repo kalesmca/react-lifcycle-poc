@@ -4,12 +4,15 @@ import {Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {getCustomerList} from '../../../redux/actions/customers'
 
+import staticData from '../../../data/application_data.json';
+
 
 
 const HeaderComponent = (props) =>{
     const appState = useSelector((state)=> state)
     const dispatch = useDispatch();
     useEffect(()=>{
+        console.log('static Data:', staticData, appState);
         // dispatch(getCustomerList())
     },[])
 

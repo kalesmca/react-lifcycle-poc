@@ -4,91 +4,24 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { InvestmentList } from "../../../constants/config";
+// import { InvestmentList } from "../../../constants/config";
 import { TextField, Box, Button } from "@mui/material";
+import CreateInvestmentComponent from './create-investment-modal';
 
+import {useSelector, useDispatch} from 'react-redux';
 export default function StocksAndMFComponents() {
   // const FundTypes = ["STOCKS", "MUTUAL-FUND"];
-  const [fundType, setFundType] = useState(InvestmentList[0]);
+  const investConstDataState = useSelector((state)=> state.investConstData)
+  const [fundType, setFundType] = useState(investConstDataState.investTypes[0]);
+  const [selectedTypeLabel, setSelectedTypeLabel] = useState(investConstDataState.investTypes[0].label)
   const [isProfileEdit, setEditFlag] = useState(false);
-
+  const [modalFlag, setModalFlag] = useState(false)
+  const handleModalClose = () => setModalFlag(false)
+  console.log('investConstDataState :', investConstDataState)
+  console.log('fund Type:', fundType);
   return (
     <div className="stocks-container">
-      {/* <Box
-                component="form"
-                sx={{
-                  "& .MuiTextField-root": { m: 1, width: "33ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="standard-basic"
-                  label="Name"
-                  variant="outlined"
-                  value={profile.name}
-                  onChange={(e) => {
-                    setProfile({ ...profile, ...{ name: e.target.value } });
-                  }}
-                  disabled={!isProfileEdit}
-                />
-              
-                <TextField
-                  id="standard-basic"
-                  label="Email-ID"
-                  variant="outlined"
-                  value={profile.email}
-                  onChange={(e) => {
-                    setProfile({ ...profile, ...{ email: e.target.value } });
-                  }}
-                  disabled={!isProfileEdit}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Blood Group"
-                  variant="outlined"
-                  value={profile.blood}
-                  onChange={(e) => {
-                    setProfile({ ...profile, ...{ blood: e.target.value } });
-                  }}
-                  disabled={!isProfileEdit}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Mobile Number"
-                  variant="outlined"
-                  value={profile.mobile}
-                  onChange={(e) => {
-                    setProfile({ ...profile, ...{ mobile: e.target.value } });
-                  }}
-                  disabled={!isProfileEdit}
-                />
-                <div
-                  style={{
-                    float: "right",
-                    marginRight: "10rem",
-                    marginTop: "1rem",
-                  }}
-                >
-                  {!isProfileEdit ? (
-                    <Button
-                      variant="contained"
-                      onClick={() => {
-                      }}
-                    >
-                      Edit
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="contained"
-                      onClick={() => {
-                      }}
-                    >
-                      Save
-                    </Button>
-                  )}
-                </div>
-              </Box> */}
+     
       <div style={{ float: "left" }}>
         <FormControl variant="standard" sx={{ m: 1, minWidth: 160 }}>
           <InputLabel id="demo-simple-select-standard-label">
@@ -97,14 +30,15 @@ export default function StocksAndMFComponents() {
           <Select
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
-            value={fundType.label}
+            value={selectedTypeLabel}
             onChange={(e) => {
-              
+              debugger
+              setSelectedTypeLabel(e.target.value.label)
               setFundType(e.target.value);
             }}
             label="Fund-Type"
           >
-            {InvestmentList.map((type, typeIndex) => {
+            {investConstDataState.investTypes.map((type, typeIndex) => {
               return (
                 <MenuItem key={typeIndex} value={type}>
                   {type.label}
@@ -116,7 +50,7 @@ export default function StocksAndMFComponents() {
       </div>
 
       <div style={{ paddingTop: "1rem" }}>
-        <Button variant="contained" onClick={() => {}}>
+        <Button variant="contained" onClick={() => {setModalFlag(true)}}>
           ADD
         </Button>
       </div>
@@ -168,6 +102,10 @@ export default function StocksAndMFComponents() {
           </table>
         </div>
       )}
+      {
+        modalFlag?(<CreateInvestmentComponent modalFlag={modalFlag} handleModalClose={handleModalClose}/>):""
+      }
+      
     </div>
   );
 }

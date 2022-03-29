@@ -51,5 +51,89 @@
       }
     ]
   },
-  "carrier": {}
+  "carrier": {},
+  "investments": {
+    "stockInsvestments": [
+      {
+        "investmentType": "",
+        "investDate": "2022-03-29T17:31:08.841Z",
+        "stockName": "TCS",
+        "stockId": "",
+        "stockPrice": "3000",
+        "stockQuantity": "40",
+        "stockAmt": 120000,
+        "brokerageAmt": 0,
+        "totalAmt": 0
+      },
+      {
+        "investmentType": "",
+        "investDate": "2022-03-29T17:31:08.841Z",
+        "stockName": "TCS",
+        "stockId": "",
+        "stockPrice": "3000",
+        "stockQuantity": "40",
+        "stockAmt": 120000,
+        "brokerageAmt": 0,
+        "totalAmt": 0
+      },
+      {
+        "investmentType": "",
+        "investDate": "2022-03-29T17:31:08.841Z",
+        "stockName": "TCS",
+        "stockId": "",
+        "stockPrice": "3000",
+        "stockQuantity": "40",
+        "stockAmt": 120000,
+        "brokerageAmt": 0,
+        "totalAmt": 0
+      },
+      {
+        "investmentType": "",
+        "investDate": "2022-03-29T17:31:08.841Z",
+        "stockName": "TCS",
+        "stockId": "",
+        "stockPrice": "3000",
+        "stockQuantity": "40",
+        "stockAmt": 120000,
+        "brokerageAmt": 0,
+        "totalAmt": 0
+      }
+    ],
+    "mutualFundInvestments": [],
+    "chitFundInvestments": []
+  },
+  "investmentConstData": {
+    "investTypes": [
+      {
+        "id": 1,
+        "label": "Stocks",
+        "investType": "STOCKS",
+        "stockList": []
+      },
+      {
+        "id": 2,
+        "label": "Mutual-Funds",
+        "investType": "MUTUALFUND",
+        "mutualFundList": []
+      },
+      {
+        "id": 3,
+        "label": "Recursive-Deposits",
+        "investType": "RD",
+        "RDList": []
+      },
+      {
+        "id": 4,
+        "label": "Fixed-Deposits",
+        "investType": "FD",
+        "FDList": []
+      },
+      {
+        "id": 5,
+        "label": "Chit-Fund",
+        "investType": "CHITFUND",
+        "chitFundList": []
+      }
+    ]
+  }
 }

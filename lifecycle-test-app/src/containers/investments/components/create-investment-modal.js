@@ -1,7 +1,13 @@
 import React from 'react'
+import {useSelector, useDispatch} from 'react-redux';
 import Modal from "@mui/material/Modal";
 import { TextField, Box, Button } from "@mui/material";
+import {stockModal} from '../investmentModal';
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 
+import {addStockInvest} from '../../../redux/actions/investments';
 const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -15,14 +21,31 @@ const modalStyle = {
   };
 
 export default function CreateInvestmentComponent(props) {
-    const [modalOpen, setModalOpen] = React.useState(false);
-    const handleClose = () => setModalOpen(false)
-    
+    let investmentState = useSelector((state)=> state.investments);
+    const dispatch = useDispatch()
+    const [modalOpen, setModalOpen] = React.useState(props.modalFlag);
+    const [investType, setInvestType] = React.useState(props.investType)
+    const [stockData, setStockData] = React.useState(stockModal);
+
+    const  calculateStockAmt = (e) =>{
+      setStockData({ ...stockData, ...{  } });
+      if(stockData.stockPrice){
+        setStockData({ ...stockData, ...{ stockAmt : e.target.value  * stockData.stockPrice, stockQuantity: e.target.value} })
+      } else {
+        setStockData({ ...stockData, ...{ stockQuantity: e.target.value} })
+      }
+    }
+    const addStockInvestment = () =>{
+      console.log('stockData:', stockData)
+      investmentState.stockInsvestments.push(stockData)
+      dispatch(addStockInvest(investmentState));
+      
+    }
   return (
-    <div>
+    
         <Modal
           open={modalOpen}
-          onClose={handleClose}
+          onClose={props.handleModalClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
@@ -41,67 +64,60 @@ export default function CreateInvestmentComponent(props) {
               >
                 <TextField
                   id="standard-basic"
-                  label="Company Name"
+                  label="Stock Name"
                   variant="outlined"
-                  value={company.name}
+                  value={stockData.stockName}
                   onChange={(e) => {
-                    setCompany({ ...company, ...{ name: e.target.value } });
-                  }}
+                    setStockData({ ...stockData, ...{ stockName: e.target.value } });
+                  }} 
                 />
                 <TextField
                   id="standard-basic"
-                  label="Company Location"
+                  label="Stock Price"
                   variant="outlined"
-                  value={company.location}
+                  value={stockData.stockPrice}
                   onChange={(e) => {
-                    setCompany({ ...company, ...{ location: e.target.value } });
-                  }}
+                    setStockData({ ...stockData, ...{ stockPrice: e.target.value } });
+                  }} 
+                 
                 />
 
                 <TextField
                   id="standard-basic"
-                  label="Emp-ID"
+                  label="Quantity"
                   variant="outlined"
-                  value={company.empId}
+                  value={stockData.stockQuantity}
                   onChange={(e) => {
-                    setCompany({ ...company, ...{ empId: e.target.value } });
-                  }}
+                    calculateStockAmt(e)
+                  }} 
+                 
                 />
                 <TextField
                   id="standard-basic"
-                  label="Comany Mail "
+                  label="Amount "
                   variant="outlined"
-                  value={company.email}
-                  onChange={(e) => {
-                    setCompany({ ...company, ...{ email: e.target.value } });
-                  }}
+                  value={stockData.stockAmt}
+                  
+                  disabled
                 />
 
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DesktopDatePicker
-                    label="Joining Date"
+                    label="Invest Date"
                     inputFormat="MM/dd/yyyy"
-                    value={company.joiningDate}
-                    onChange={(value) => {
-                      setCompany({ ...company, ...{ joiningDate: value } });
-                    }}
+                    value={stockData.investDate}
+                  onChange={(value) => {
+                    setStockData({ ...stockData, ...{ investDate: value } });
+                  }} 
                     renderInput={(params) => <TextField {...params} />}
                   />
 
-                  <DesktopDatePicker
-                    label="Release Date"
-                    inputFormat="MM/dd/yyyy"
-                    value={company.releaseDate}
-                    onChange={(value) => {
-                      setCompany({ ...company, ...{ releaseDate: value } });
-                    }}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
+                 
                 </LocalizationProvider>
                 <Button
                   variant="contained"
                   onClick={() => {
-                    addCompanyInfo();
+                    addStockInvestment();
                   }}
                 >
                   Save
@@ -110,6 +126,6 @@ export default function CreateInvestmentComponent(props) {
             </div>
           </Box>
         </Modal>
-      </div>
+      
   )
 }
