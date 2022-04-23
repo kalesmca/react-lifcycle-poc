@@ -39,6 +39,7 @@ export default function CreateInvestmentComponent(props) {
       console.log('stockData:', stockData)
       investmentState.stockInsvestments.push(stockData)
       dispatch(addStockInvest(investmentState));
+      props.handleModalClose();
       
     }
   return (

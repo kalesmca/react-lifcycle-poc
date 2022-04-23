@@ -27,27 +27,27 @@
     "companyList": [
       {
         "name": "Apptivo Software Pvt Ltd",
-        "location": "Maduskal",
+        "location": "Madurai",
         "email": "kmariappan@apptivo.com",
         "empId": "AIDC_1250",
         "joiningDate": "2014-12-15T15:41:54.000Z",
         "releaseDate": "2016-11-30T15:41:54.000Z"
       },
       {
-        "name": "Apptivo",
-        "location": "Muhavoor",
-        "email": "sfas",
-        "empId": "kales@gmas",
-        "joiningDate": "2014-08-18T15:41:54.000Z",
-        "releaseDate": "2014-08-18T15:41:54.000Z"
+        "name": "Palnar Transmedia pvt ltd",
+        "location": "Trivandrum",
+        "email": "kaleeswaran@iinerds.com",
+        "empId": "kaleeswaran@iinerds.com",
+        "joiningDate": "2017-07-17T15:41:54.000Z",
+        "releaseDate": "2019-01-31T15:41:54.000Z"
       },
       {
-        "name": "Apptivo",
-        "location": "delhi",
-        "email": "sfas",
-        "empId": "kales@gmas",
-        "joiningDate": "2014-08-18T15:41:54.000Z",
-        "releaseDate": "2014-08-18T15:41:54.000Z"
+        "name": "Tata Consultancy Sevices",
+        "location": "Trivandrum",
+        "email": "kaleeswaran.mariappan@tcs.com",
+        "empId": "1640154",
+        "joiningDate": "2019-02-06T15:41:54.000Z",
+        "releaseDate": "2021-06-06T15:41:54.000Z"
       }
     ]
   },
@@ -97,6 +97,17 @@
         "stockAmt": 120000,
         "brokerageAmt": 0,
         "totalAmt": 0
+      },
+      {
+        "investmentType": "",
+        "investDate": "2022-03-30T07:18:15.875Z",
+        "stockName": "Infosys",
+        "stockId": "",
+        "stockPrice": "230",
+        "stockQuantity": "200",
+        "stockAmt": 46000,
+        "brokerageAmt": 0,
+        "totalAmt": 0
       }
     ],
     "mutualFundInvestments": [],
@@ -108,7 +119,18 @@
         "id": 1,
         "label": "Stocks",
         "investType": "STOCKS",
-        "stockList": []
+        "stockList": [
+          {
+            "stockName": "",
+            "stockId": 1650725234,
+            "createDate": "2022-04-23T14:47:14.232Z"
+          },
+          {
+            "stockName": "Infosys",
+            "stockId": 1650725317,
+            "createDate": "2022-04-23T14:48:36.865Z"
+          }
+        ]
       },
       {
         "id": 2,

@@ -10,6 +10,7 @@ const SideBarComponent = (props) =>{
                     </center>
                     <Link to="/"><i className="fas fa-home"></i><span>ParentContainer</span></Link>
                     <Link to="/create-type"><i className="fas fa-star"></i><span>Create</span></Link>
+                    <Link to="/invest-type-list"><i className="fas fa-star"></i><span>Invest-type-list</span></Link>
 
                     <Link to="/types-list"><i className="fas fa-chart-line"></i><span>List</span></Link>
                     <Link to="/investments"><i className="fas fa-chart-line"></i><span>Investments</span></Link>
