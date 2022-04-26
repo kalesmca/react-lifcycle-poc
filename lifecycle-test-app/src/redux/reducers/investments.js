@@ -1,11 +1,11 @@
 import staticData from '../../data/application_data.json';
-import {GET_INVEST_CONST_DATA, ADD_STOCK_INVESTMENTS} from '../../constants/actions';
+import {GET_INVEST_CONST_DATA, ADD_INVESTMENTS} from '../../constants/actions';
 
 const initState = staticData.investments;
 
 const investments = (state=initState, action) =>{
     switch(action.type){
-        case ADD_STOCK_INVESTMENTS: {
+        case ADD_INVESTMENTS: {
             return{...state,  ...action.payload}
             break;
         }

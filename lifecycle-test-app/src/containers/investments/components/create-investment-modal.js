@@ -7,7 +7,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 
-import {addStockInvest} from '../../../redux/actions/investments';
+import {addInvest} from '../../../redux/actions/investments';
 const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -38,7 +38,7 @@ export default function CreateInvestmentComponent(props) {
     const addStockInvestment = () =>{
       console.log('stockData:', stockData)
       investmentState.stockInsvestments.push(stockData)
-      dispatch(addStockInvest(investmentState));
+      dispatch(addInvest(investmentState));
       props.handleModalClose();
       
     }

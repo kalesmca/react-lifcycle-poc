@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import StocksAndMFComponents from './components/stocksAndMFComponents';
 import ChitfundsComponents from './components/chitfundsComponents';
 import BankDepositComponent from './components/bankDepositComponent';
+import GrowInvestComponent from './components/growInvestComponent';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,6 +74,7 @@ export default function InvestmentContainer() {
           <Tab label="Stock and Mutual-Funds" {...a11yProps(0)} />
           <Tab label="Bank-Deposits" {...a11yProps(1)} />
           <Tab label="Chit-Funds" {...a11yProps(2)} />
+          <Tab label="Grow-App-Deposits" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -89,6 +91,11 @@ export default function InvestmentContainer() {
         <TabPanel value={value} index={2} dir={theme.direction}>
           <ChitfundsComponents />
         </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          <GrowInvestComponent />
+        </TabPanel>
+
+        
       </SwipeableViews>
     </Box>
 
