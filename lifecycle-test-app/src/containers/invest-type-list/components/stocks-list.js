@@ -13,7 +13,6 @@ export default function StockListComponent() {
   console.log('investtype ::', investConstData);
 
   const addStock = () =>{
-
     const newStock = {
         stockName: newStockName,
         stockId: Math.round(new Date().getTime()/1000),
@@ -34,8 +33,8 @@ export default function StockListComponent() {
         </FormControl>
       </div>
 
-      <div style={{ paddingTop: "1rem" }}>
-        <Button variant="contained" onClick={() => {addStock()}}>
+      <div style={{ paddingTop: "1rem" }} >
+        <Button variant="contained" onClick={() => { addStock()}} disabled={!newStockName}>
           ADD
         </Button>
       </div>

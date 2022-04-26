@@ -120,15 +120,107 @@
         "label": "Stocks",
         "investType": "STOCKS",
         "stockList": [
-          {
-            "stockName": "",
-            "stockId": 1650725234,
-            "createDate": "2022-04-23T14:47:14.232Z"
-          },
+         
           {
             "stockName": "Infosys",
             "stockId": 1650725317,
             "createDate": "2022-04-23T14:48:36.865Z"
+          },
+          
+          {
+            "stockName": "TCS",
+            "stockId": 1650799296,
+            "createDate": "2022-04-24T11:21:36.455Z"
+          },
+          {
+            "stockName": "Nippon-pharma",
+            "stockId": 1650799484,
+            "createDate": "2022-04-24T11:24:43.809Z"
+          },
+          {
+            "stockName": "ITC",
+            "stockId": 1650799498,
+            "createDate": "2022-04-24T11:24:58.183Z"
+          },
+          {
+            "stockName": "Stove-Kraft",
+            "stockId": 1650799522,
+            "createDate": "2022-04-24T11:25:21.522Z"
+          },
+          {
+            "stockName": "SBI",
+            "stockId": 1650799529,
+            "createDate": "2022-04-24T11:25:29.459Z"
+          },
+          {
+            "stockName": "HDFC",
+            "stockId": 1650799538,
+            "createDate": "2022-04-24T11:25:38.474Z"
+          },
+          {
+            "stockName": "ICICI",
+            "stockId": 1650799550,
+            "createDate": "2022-04-24T11:25:50.216Z"
+          },
+          {
+            "stockName": "Tech-Mahindra",
+            "stockId": 1650799565,
+            "createDate": "2022-04-24T11:26:05.353Z"
+          },
+          {
+            "stockName": "Tata-Power",
+            "stockId": 1650799579,
+            "createDate": "2022-04-24T11:26:18.827Z"
+          },
+          {
+            "stockName": "IDFC-FirstBank",
+            "stockId": 1650799592,
+            "createDate": "2022-04-24T11:26:31.537Z"
+          },
+          {
+            "stockName": "Tata-Motors-DVR",
+            "stockId": 1650799605,
+            "createDate": "2022-04-24T11:26:44.847Z"
+          },
+          {
+            "stockName": "Adani-Power",
+            "stockId": 1650799619,
+            "createDate": "2022-04-24T11:26:59.043Z"
+          },
+          {
+            "stockName": "ONGC",
+            "stockId": 1650799626,
+            "createDate": "2022-04-24T11:27:05.757Z"
+          },
+          {
+            "stockName": "Kalyan-jewells",
+            "stockId": 1650799650,
+            "createDate": "2022-04-24T11:27:29.798Z"
+          },
+          {
+            "stockName": "Nippon-IT",
+            "stockId": 1650799659,
+            "createDate": "2022-04-24T11:27:39.279Z"
+          },
+          {
+            "stockName": "Indian-Railways-Finance",
+            "stockId": 1650799675,
+            "createDate": "2022-04-24T11:27:54.571Z"
+          },
+          {
+            "stockName": "Exide-Inds",
+            "stockId": 1650799684,
+            "createDate": "2022-04-24T11:28:03.922Z"
+          },
+          {
+            "stockName": "IFCI",
+            "stockId": 1650799694,
+            "createDate": "2022-04-24T11:28:13.948Z"
+          },
+          {
+            "stockName": "JSW-Energy",
+            "stockId": 1650799787,
+            "createDate": "2022-04-24T11:29:47.208Z"
           }
         ]
       },
