@@ -53,8 +53,30 @@
   },
   "carrier": {},
   "investments": {
-    "month_summary":{
-      
+    "month_summary": {
+      "summaryList": [
+        {
+          "id": 1651070466,
+          "date": "2022-04-27",
+          "tmbDeposit": 250000,
+          "iciciDeposit": 0,
+          "scbDeposit": 0,
+          "sbiDeposit": 0,
+          "equtDeposit": 0,
+          "tmbAcc": 4465,
+          "scbAcc": 118477,
+          "iciciAcc": 0,
+          "sbiAcc": 580,
+          "equtAcc": 451,
+          "balaChit": 74650,
+          "muthuChit": 102900,
+          "stockCurrent": 200000,
+          "mutualFund": 24546,
+          "sundariAcc": 200000,
+          "sundariInves": 10000,
+          "totalAmt": 986069
+        }
+      ]
     },
     "growInvestAmt": {
       "totalAmt": 229600,

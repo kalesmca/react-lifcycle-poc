@@ -45,7 +45,7 @@ const GrowInvestComponent = () => {
         <div className='stocks-container'>
             <div style={{ float: "left" }}>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 160 }}>
-                    <TextField id="standard-basic" label="Invest Amount" variant="standard" value={investObj.amt} onChange={(e)=>{setInvestObj({...investObj, amt:parseInt(e.target.value)})}}/>
+                    <TextField type="number" id="standard-basic" label="Invest Amount" variant="standard" value={investObj.amt} onChange={(e)=>{setInvestObj({...investObj, amt:parseInt(e.target.value)})}}/>
                 </FormControl>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 160 }}>
                     <input type="date" className='date-picker'value={investObj.date} onChange={(e)=>{setInvestObj({...investObj, date:e.target.value})}}/>
