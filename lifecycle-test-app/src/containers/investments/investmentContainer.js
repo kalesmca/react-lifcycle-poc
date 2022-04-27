@@ -13,7 +13,7 @@ import StocksAndMFComponents from './components/stocksAndMFComponents';
 import ChitfundsComponents from './components/chitfundsComponents';
 import BankDepositComponent from './components/bankDepositComponent';
 import GrowInvestComponent from './components/growInvestComponent';
-
+import InvestmentSummaryComponent from './components/investment-sumary';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -75,6 +75,7 @@ export default function InvestmentContainer() {
           <Tab label="Bank-Deposits" {...a11yProps(1)} />
           <Tab label="Chit-Funds" {...a11yProps(2)} />
           <Tab label="Grow-App-Deposits" {...a11yProps(3)} />
+          <Tab label="Summary" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -94,6 +95,11 @@ export default function InvestmentContainer() {
         <TabPanel value={value} index={3} dir={theme.direction}>
           <GrowInvestComponent />
         </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+          <InvestmentSummaryComponent />
+        </TabPanel>
+
+        
 
         
       </SwipeableViews>

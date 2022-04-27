@@ -53,6 +53,9 @@
   },
   "carrier": {},
   "investments": {
+    "month_summary":{
+      
+    },
     "growInvestAmt": {
       "totalAmt": 229600,
       "amtList": [

@@ -22,7 +22,7 @@ const HeaderComponent = (props) =>{
                         <i className="fas fa-bars" id="sidebar-btn"></i>
                     </label>
                     <div className="header-left">
-                        <span><h3>RMWB-Cockpit</h3></span>
+                        <span><h3>Kalees-Sundari</h3></span>
                         {/* {
                            appState.customers?.customerList?.map((customer, cusIndex)=>{
                                return(

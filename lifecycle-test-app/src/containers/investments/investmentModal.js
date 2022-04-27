@@ -23,3 +23,24 @@ export const invstmentTypeModal = {
 
 }
 
+export const investSummaryModal = {
+    id: Math.round(new Date().getTime()/1000),
+    date: new Date(),
+    sbiAcc: 0,
+    scbAcc: 0,
+    equtAcc: 0,
+    tmbAcc: 0,
+    iciciAcc: 0,
+    sbiDeposit: 0,
+    scbDeposit: 0,
+    equtDeposit: 0,
+    tmbDeposit: 0,
+    iciciDeposit: 0,
+    mutualFund:0,
+    stockCurrent:0,
+    sundariAcc:0,
+    sundariInves:0,
+    balaChit:0,
+    MuthuChit:0
+}
+

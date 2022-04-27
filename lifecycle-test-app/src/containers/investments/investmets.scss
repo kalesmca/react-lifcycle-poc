@@ -34,3 +34,24 @@
         color:  var(--textColor);;
       }
 }
+
+    .invest-summary{
+        font-family: sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        td, th{
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: var(--primaryColor);
+          color:  var(--textColor);;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:hover {background-color: #ddd;}
+  }
